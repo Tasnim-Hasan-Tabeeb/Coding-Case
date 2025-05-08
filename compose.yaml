@@ -4,17 +4,6 @@ services:
   db:
     image: postgres:15-alpine
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: Tabeeb123
-      POSTGRES_DB: postgres
-    ports:
-      - "5432:5432"
-
-  web:
-    build: .
+      - POSTGRES_PASSWORD=Tabeeb123
     ports:
       - "3000:3000"
-    environment:
-      DATABASE_URL: "postgresql://postgres:Tabeeb123@db:5432/postgres?schema=public"
-    depends_on:
-      - db
